@@ -1,10 +1,15 @@
+import java.net.URI
 import java.util.Calendar
 import java.util.TimeZone
 
 plugins {
     kotlin("jvm") version "1.5.31"
     id("com.github.johnrengelman.shadow") version "7.1.0"
+    id("org.jetbrains.dokka") version "1.5.30"
+    `maven-publish`
+    signing
 }
+
 val powerNukkitVersion: String by project
 val kotlinVersion: String by project
 val kotlinxSerializationVersion: String by project
@@ -19,6 +24,8 @@ val slf4jVersion: String by project
 val jetbrainsAnnotationsVersion: String by project
 val okioVersion: String by project
 val log4jSlf4jImplVersion: String by project
+val ossrhUsername: String by project
+val ossrhPassword: String by project
 
 group = "org.powernukkit.plugins"
 val cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"))!!
@@ -78,6 +85,8 @@ kotlin {
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+    //withJavadocJar()
+    withSourcesJar()
 }
 
 tasks {
@@ -104,6 +113,94 @@ tasks {
                 )
             ))
         }
+    }
+}
+
+val dokkaHtmlJar: TaskProvider<Jar> by tasks.registering(Jar::class) {
+    dependsOn(tasks.dokkaHtml)
+    archiveClassifier.set("javadoc")
+    from(tasks.dokkaHtml.get().outputDirectory)
+}
+
+publishing {
+    repositories {
+        maven {
+            val local = false
+            val releasesRepoUrl: URI
+            val snapshotsRepoUrl: URI
+            if (local) {
+                releasesRepoUrl = uri(layout.buildDirectory.dir("repos/releases"))
+                snapshotsRepoUrl = uri(layout.buildDirectory.dir("repos/snapshots"))
+            } else {
+                releasesRepoUrl = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+                snapshotsRepoUrl = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+                credentials {
+                    username = ossrhUsername
+                    password = ossrhPassword
+                }
+            }
+
+            url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
+        }
+    }
+
+    publications {
+        create<MavenPublication>("mavenJava") {
+            artifactId = "kotlin-plugin-lib"
+            from(components["java"])
+            artifact(dokkaHtmlJar)
+            versionMapping {
+                usage("java-api") {
+                    fromResolutionOf("runtimeClasspath")
+                }
+                usage("java-runtime") {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name.set("PowerNukkit Kotlin Plugin Library")
+                description.set("Provides Kotlin libs and some features for building Kotlin plugins")
+                url.set("https://github.com/PowerNukkit/KotlinPlugin")
+                inceptionYear.set("2021")
+                packaging = "jar"
+                issueManagement {
+                    url.set("https://github.com/PowerNukkit/KotlinPlugin/issues")
+                    system.set("GitHub")
+                }
+                organization {
+                    name.set("PowerNukkit")
+                    url.set("https://powernukkit.org")
+                }
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("joserobjr")
+                        name.set("José Roberto de Araújo Júnior")
+                        email.set("joserobjr@powernukkit.org")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/PowerNukkit/KotlinPlugin.git")
+                    developerConnection.set("scm:git:ssh://github.com/PowerNukkit/KotlinPlugin.git")
+                    url.set("https://github.com/PowerNukkit/KotlinPlugin")
+                }
+            }
+        }
+    }
+}
+
+signing {
+    sign(publishing.publications["mavenJava"])
+}
+
+tasks.javadoc {
+    if (JavaVersion.current().isJava9Compatible) {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 }
 

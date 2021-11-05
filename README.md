@@ -21,7 +21,7 @@ Can be used instead of [CreeperFace's KotlinLib](https://cloudburstmc.org/resour
 * [okio](https://square.github.io/okio/)
 * [knbt](https://github.com/BenWoodworth/knbt)
 * [kaml](https://github.com/charleskorn/kaml)
-* [ktor-io](https://ktor.io/)
+* [ktor-io](https://github.com/ktorio/ktor/tree/main/ktor-io)
 * [ktor-utils](https://ktor.io/docs/servers-raw-sockets.html)
 * [ktor-network](https://ktor.io/docs/servers-raw-sockets.html)
 * [ktor-network-tls](https://ktor.io/docs/servers-raw-sockets.html)
