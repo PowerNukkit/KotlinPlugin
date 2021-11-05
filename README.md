@@ -1,28 +1,50 @@
-# Example Plugin for PowerNukkit
-This is an example plugin which can also be used as template to start your own plugin.
+# Kotlin Plugin
+Provides Kotlin libs and some features for building awesome Kotlin plugins.
 
-As an example I created a plugin named clone-me, it creates a clone of yourself when you run `/clone`
-and gives you a flower if you hit the clone and then despawn the clone. It also send some fancy messages.
+Can be used instead of [CreeperFace's KotlinLib](https://cloudburstmc.org/resources/kotlinlib.48/) (don't use together!)
 
-These is enough to serve as an example on how to:
-- Begin a new plugin
-- Create event listeners and handlers
-- Create custom commands
-- Format text
-- Spawn NPCs
-- Despawn NPCs
-- Detect attacks
-- Make entities invulnerable
-- Create and fill a `plugin.yml` file
-- Debug your plugin properly
+## Included Libraries
+
+### Kotlin
+* [kotlin-stdlib](https://github.com/JetBrains/kotlin/tree/master/libraries/stdlib)
+* [kotlin-stdlib-jdk7](https://github.com/JetBrains/kotlin/tree/master/libraries/stdlib)
+* [kotlin-stdlib-jdk8](https://github.com/JetBrains/kotlin/tree/master/libraries/stdlib)
+* [kotlin-reflect](https://github.com/JetBrains/kotlin/tree/master/libraries/reflect)
+* [kotlinx-coroutines-core](https://github.com/Kotlin/kotlinx.coroutines)
+* [kotlinx-serialization-core](https://github.com/Kotlin/kotlinx.serialization)
+* [kotlinx-serialization-json](https://github.com/Kotlin/kotlinx.serialization)
+* [kotlinx-serialization-protobuf](https://github.com/Kotlin/kotlinx.serialization)
+* [kotlinx-serialization-cbor](https://github.com/Kotlin/kotlinx.serialization)
+* [kotlinx-serialization-properties](https://github.com/Kotlin/kotlinx.serialization)
+* [kotlinx-datetime](https://github.com/Kotlin/kotlinx-datetime)
+* [kotlinx-collections-immutable](https://github.com/Kotlin/kotlinx.collections.immutable)
+* [okio](https://square.github.io/okio/)
+* [knbt](https://github.com/BenWoodworth/knbt)
+* [kaml](https://github.com/charleskorn/kaml)
+* [ktor-io](https://ktor.io/)
+* [ktor-utils](https://ktor.io/docs/servers-raw-sockets.html)
+* [ktor-network](https://ktor.io/docs/servers-raw-sockets.html)
+* [ktor-network-tls](https://ktor.io/docs/servers-raw-sockets.html)
+* [ktor-http](https://ktor.io/docs/client.html)
+* [ktor-http-cio](https://ktor.io/docs/client.html)
+* [ktor-client-core](https://ktor.io/docs/client.html)
+* [ktor-client-cio](https://ktor.io/docs/client.html)
+* [ktor-client-json](https://ktor.io/docs/json.html)
+* [ktor-client-gson](https://ktor.io/docs/json.html)
+* [ktor-client-serialization](https://ktor.io/docs/json.html)
+* [MichaelBull's kotlin-inline-logger](https://github.com/michaelbull/kotlin-inline-logger)
+
+### Java
+* [slf4j-api](http://www.slf4j.org/)
+* [jetbrains-annotations](https://www.jetbrains.com/help/idea/annotating-source-code.html)
 
 ## Cloning and importing
-1. Just do a normal `git clone https://github.com/PowerNukkit/ExamplePlugin.git` (or the URL of your own git repository)
-2. Import the `build.gradle` file with your IDE, it should do the rest by itself
+1. Just do a normal `git clone https://github.com/PowerNukkit/KotlinPlugin.git` (or the URL of your own git repository)
+2. Import the `build.gradle.kts` file with your IDE, it should do the rest by itself
 
 ## Running
-1. Just do a normal `git clone https://github.com/PowerNukkit/ExamplePlugin.git` (or the URL of your own git repository)
-2. `cd ExamplePlugin` (or the name of your project)
+1. Just do a normal `git clone https://github.com/PowerNukkit/KotlinPlugin.git` (or the URL of your own git repository)
+2. `cd KotlinPlugin` (or the name of your project)
 3. `./gradlew run`
 
 ## Debugging
