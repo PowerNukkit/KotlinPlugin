@@ -17,11 +17,14 @@ import java.io.InputStream
 
 @Suppress("RedundantOverride")
 public abstract class KotlinPluginBase: PluginBase() {
-    @Suppress("LeakingThis")
-    public val log: InlineLogger = InlineLogger(KotlinPluginLogger(this))
+    public val log: InlineLogger by lazy {
+        InlineLogger(KotlinPluginLogger(this))
+    }
 
     @Suppress("LeakingThis")
-    public val syncDispatcher: CoroutineDispatcher = SyncPluginExecutor(this).asCoroutineDispatcher()
+    public val syncDispatcher: CoroutineDispatcher by lazy {
+        SyncPluginExecutor(this).asCoroutineDispatcher()
+    }
 
     @Deprecated(message = "Use the log property instead.", replaceWith = ReplaceWith("log"))
     override fun getLogger(): PluginLogger {
