@@ -38,6 +38,68 @@ Can be used instead of [CreeperFace's KotlinLib](https://cloudburstmc.org/resour
 * [slf4j-api](http://www.slf4j.org/)
 * [jetbrains-annotations](https://www.jetbrains.com/help/idea/annotating-source-code.html)
 
+
+## How to use in your plugin
+
+Add this dependency to your `plugin.yml` file (required):
+```yaml
+depend:
+  - KotlinLib
+```
+
+Add a library dependency to your project using the examples bellow (recommended).
+
+Make your plugin class extend `KotlinPluginBase` (optional).
+
+Note: We haven't published to the maven central yet, but the snapshots are available at Sonatype OSS snapshots repository.
+
+### Gradle (Kotlin DSL)
+```kotlin
+repositories {
+    maven(url="https://oss.sonatype.org/content/repositories/snapshots/")
+}
+
+dependencies {
+    implementation("org.powernukkit:powernukkit:1.5.1.0-PN")
+    implementation("org.powernukkit.plugins:kotlin-plugin-lib:1.5.31+0.1.0+2021.10.5-SNAPSHOT")
+}
+```
+
+### Gradle (Groovy DSL)
+```groovy
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+}
+
+dependencies {
+    implementation 'org.powernukkit:powernukkit:1.5.1.0-PN'
+    implementation 'org.powernukkit.plugins:kotlin-plugin-lib:1.5.31+0.1.0+2021.10.5-SNAPSHOT'
+}
+```
+
+### Maven
+```xml
+<repositories>
+    <repository>
+        <id>sonatype-oss-snapshots</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>org.powernukkit</groupId>
+        <artifactId>powernukkit</artifactId>
+        <version>1.5.1.0-PN</version>
+    </dependency>
+    <dependency>
+        <groupId>org.powernukkit.plugins</groupId>
+        <artifactId>kotlin-plugin-lib</artifactId>
+        <version>1.5.31+0.1.0+2021.10.5-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+
 ## Cloning and importing
 1. Just do a normal `git clone https://github.com/PowerNukkit/KotlinPlugin.git` (or the URL of your own git repository)
 2. Import the `build.gradle.kts` file with your IDE, it should do the rest by itself
