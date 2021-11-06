@@ -92,301 +92,301 @@ public class KotlinPluginLogger private constructor(
 
     override fun trace(msg: String?) {
         if (isTraceEnabled) {
-            delegate.trace(msg.prefixed())
+            apacheLogger.trace(msg.prefixed())
         }
     }
 
     override fun trace(format: String?, arg: Any?) {
         if (isTraceEnabled) {
-            delegate.trace(format.prefixed())
+            apacheLogger.trace(format.prefixed(), arg)
         }
     }
 
     override fun trace(format: String?, arg1: Any?, arg2: Any?) {
         if (isTraceEnabled) {
-            delegate.trace(format.prefixed())
+            apacheLogger.trace(format.prefixed(), arg1, arg2)
         }
     }
 
     override fun trace(format: String?, vararg arguments: Any?) {
         if (isTraceEnabled) {
-            delegate.trace(format.prefixed())
+            apacheLogger.trace(format.prefixed(), *arguments)
         }
     }
 
     override fun trace(msg: String?, t: Throwable?) {
         if (isTraceEnabled) {
-            delegate.trace(msg.prefixed())
+            apacheLogger.trace(msg.prefixed(), t)
         }
     }
 
     override fun trace(marker: Marker?, msg: String?) {
         if (isTraceEnabled) {
-            delegate.trace(msg.prefixed())
+            delegate.trace(marker, msg.prefixed())
         }
     }
 
     override fun trace(marker: Marker?, format: String?, arg: Any?) {
         if (isTraceEnabled) {
-            delegate.trace(format.prefixed())
+            delegate.trace(marker, format.prefixed(), arg)
         }
     }
 
     override fun trace(marker: Marker?, format: String?, arg1: Any?, arg2: Any?) {
         if (isTraceEnabled) {
-            delegate.trace(format.prefixed())
+            delegate.trace(marker, format.prefixed(), arg1, arg2)
         }
     }
 
     override fun trace(marker: Marker?, format: String?, vararg argArray: Any?) {
         if (isTraceEnabled) {
-            delegate.trace(format.prefixed())
+            delegate.trace(marker, format.prefixed(), *argArray)
         }
     }
 
     override fun trace(marker: Marker?, msg: String?, t: Throwable?) {
         if (isTraceEnabled) {
-            delegate.trace(msg.prefixed())
+            delegate.trace(marker, msg.prefixed())
         }
     }
 
     override fun debug(msg: String?) {
         if (isDebugEnabled) {
-            delegate.debug(msg.prefixed())
+            apacheLogger.debug(msg.prefixed())
         }
     }
 
     override fun debug(format: String?, arg: Any?) {
         if (isDebugEnabled) {
-            delegate.debug(format.prefixed())
+            apacheLogger.debug(format.prefixed(), arg)
         }
     }
 
     override fun debug(format: String?, arg1: Any?, arg2: Any?) {
         if (isDebugEnabled) {
-            delegate.debug(format.prefixed())
+            apacheLogger.debug(format.prefixed(), arg1, arg2)
         }
     }
 
     override fun debug(format: String?, vararg arguments: Any?) {
         if (isDebugEnabled) {
-            delegate.debug(format.prefixed())
+            apacheLogger.debug(format.prefixed(), *arguments)
         }
     }
 
     override fun debug(msg: String?, t: Throwable?) {
         if (isDebugEnabled) {
-            delegate.debug(msg.prefixed())
+            apacheLogger.debug(msg.prefixed(), t)
         }
     }
 
     override fun debug(marker: Marker?, msg: String?) {
         if (isDebugEnabled) {
-            delegate.debug(msg.prefixed())
+            delegate.debug(marker, msg.prefixed())
         }
     }
 
     override fun debug(marker: Marker?, format: String?, arg: Any?) {
         if (isDebugEnabled) {
-            delegate.debug(format.prefixed())
+            delegate.debug(marker, format.prefixed(), arg)
         }
     }
 
     override fun debug(marker: Marker?, format: String?, arg1: Any?, arg2: Any?) {
         if (isDebugEnabled) {
-            delegate.debug(format.prefixed())
+            delegate.debug(marker, format.prefixed(), arg1, arg2)
         }
     }
 
     override fun debug(marker: Marker?, format: String?, vararg arguments: Any?) {
         if (isDebugEnabled) {
-            delegate.debug(format.prefixed())
+            delegate.debug(marker, format.prefixed(), *arguments)
         }
     }
 
     override fun debug(marker: Marker?, msg: String?, t: Throwable?) {
         if (isDebugEnabled) {
-            delegate.debug(msg.prefixed())
+            delegate.debug(marker, msg.prefixed())
         }
     }
 
     override fun info(msg: String?) {
         if (isInfoEnabled) {
-            delegate.info(msg.prefixed())
+            apacheLogger.info(msg.prefixed())
         }
     }
 
     override fun info(format: String?, arg: Any?) {
         if (isInfoEnabled) {
-            delegate.info(format.prefixed())
+            apacheLogger.info(format.prefixed(), arg)
         }
     }
 
     override fun info(format: String?, arg1: Any?, arg2: Any?) {
         if (isInfoEnabled) {
-            delegate.info(format.prefixed())
+            apacheLogger.info(format.prefixed(), arg1, arg2)
         }
     }
 
     override fun info(format: String?, vararg arguments: Any?) {
         if (isInfoEnabled) {
-            delegate.info(format.prefixed())
+            apacheLogger.info(format.prefixed(), *arguments)
         }
     }
 
     override fun info(msg: String?, t: Throwable?) {
         if (isInfoEnabled) {
-            delegate.info(msg.prefixed())
+            apacheLogger.info(msg.prefixed(), t)
         }
     }
 
     override fun info(marker: Marker?, msg: String?) {
         if (isInfoEnabled) {
-            delegate.info(msg.prefixed())
+            delegate.info(marker, msg.prefixed())
         }
     }
 
     override fun info(marker: Marker?, format: String?, arg: Any?) {
         if (isInfoEnabled) {
-            delegate.info(format.prefixed())
+            delegate.info(marker, format.prefixed(), arg)
         }
     }
 
     override fun info(marker: Marker?, format: String?, arg1: Any?, arg2: Any?) {
         if (isInfoEnabled) {
-            delegate.info(format.prefixed())
+            delegate.info(marker, format.prefixed(), arg1, arg2)
         }
     }
 
     override fun info(marker: Marker?, format: String?, vararg arguments: Any?) {
         if (isInfoEnabled) {
-            delegate.info(format.prefixed())
+            delegate.info(marker, format.prefixed(), *arguments)
         }
     }
 
     override fun info(marker: Marker?, msg: String?, t: Throwable?) {
         if (isInfoEnabled) {
-            delegate.info(msg.prefixed())
+            delegate.info(marker, msg.prefixed())
         }
     }
 
     override fun warn(msg: String?) {
         if (isWarnEnabled) {
-            delegate.warn(msg.prefixed())
+            apacheLogger.warn(msg.prefixed())
         }
     }
 
     override fun warn(format: String?, arg: Any?) {
         if (isWarnEnabled) {
-            delegate.warn(format.prefixed())
+            apacheLogger.warn(format.prefixed(), arg)
         }
     }
 
     override fun warn(format: String?, vararg arguments: Any?) {
         if (isWarnEnabled) {
-            delegate.warn(format.prefixed())
+            apacheLogger.warn(format.prefixed(), *arguments)
         }
     }
 
     override fun warn(format: String?, arg1: Any?, arg2: Any?) {
         if (isWarnEnabled) {
-            delegate.warn(format.prefixed())
+            apacheLogger.warn(format.prefixed(), arg1, arg2)
         }
     }
 
     override fun warn(msg: String?, t: Throwable?) {
         if (isWarnEnabled) {
-            delegate.warn(msg.prefixed())
+            apacheLogger.warn(msg.prefixed(), t)
         }
     }
 
     override fun warn(marker: Marker?, msg: String?) {
         if (isWarnEnabled) {
-            delegate.warn(msg.prefixed())
+            delegate.warn(marker, msg.prefixed())
         }
     }
 
     override fun warn(marker: Marker?, format: String?, arg: Any?) {
         if (isWarnEnabled) {
-            delegate.warn(format.prefixed())
+            delegate.warn(marker, format.prefixed(), arg)
         }
     }
 
     override fun warn(marker: Marker?, format: String?, arg1: Any?, arg2: Any?) {
         if (isWarnEnabled) {
-            delegate.warn(format.prefixed())
+            delegate.warn(marker, format.prefixed(), arg1, arg2)
         }
     }
 
     override fun warn(marker: Marker?, format: String?, vararg arguments: Any?) {
         if (isWarnEnabled) {
-            delegate.warn(format.prefixed())
+            delegate.warn(marker, format.prefixed(), *arguments)
         }
     }
 
     override fun warn(marker: Marker?, msg: String?, t: Throwable?) {
         if (isWarnEnabled) {
-            delegate.warn(msg.prefixed())
+            delegate.warn(marker, msg.prefixed())
         }
     }
 
     override fun error(msg: String?) {
         if (isErrorEnabled) {
-            delegate.error(msg.prefixed())
+            apacheLogger.error(msg.prefixed())
         }
     }
 
     override fun error(format: String?, arg: Any?) {
         if (isErrorEnabled) {
-            delegate.error(format.prefixed())
+            apacheLogger.error(format.prefixed(), arg)
         }
     }
 
     override fun error(format: String?, arg1: Any?, arg2: Any?) {
         if (isErrorEnabled) {
-            delegate.error(format.prefixed())
+            apacheLogger.error(format.prefixed(), arg1, arg2)
         }
     }
 
     override fun error(format: String?, vararg arguments: Any?) {
         if (isErrorEnabled) {
-            delegate.error(format.prefixed())
+            apacheLogger.error(format.prefixed(), *arguments)
         }
     }
 
     override fun error(msg: String?, t: Throwable?) {
         if (isErrorEnabled) {
-            delegate.error(msg.prefixed())
+            apacheLogger.error(msg.prefixed(), t)
         }
     }
 
     override fun error(marker: Marker?, msg: String?) {
         if (isErrorEnabled) {
-            delegate.error(msg.prefixed())
+            delegate.error(marker, msg.prefixed())
         }
     }
 
     override fun error(marker: Marker?, format: String?, arg: Any?) {
         if (isErrorEnabled) {
-            delegate.error(format.prefixed())
+            delegate.error(marker, format.prefixed(), arg)
         }
     }
 
     override fun error(marker: Marker?, format: String?, arg1: Any?, arg2: Any?) {
         if (isErrorEnabled) {
-            delegate.error(format.prefixed())
+            delegate.error(marker, format.prefixed(), arg1, arg2)
         }
     }
 
     override fun error(marker: Marker?, format: String?, vararg arguments: Any?) {
         if (isErrorEnabled) {
-            delegate.error(format.prefixed())
+            delegate.error(marker, format.prefixed(), *arguments)
         }
     }
 
     override fun error(marker: Marker?, msg: String?, t: Throwable?) {
         if (isErrorEnabled) {
-            delegate.error(msg.prefixed())
+            delegate.error(marker, msg.prefixed(), t)
         }
     }
 }
