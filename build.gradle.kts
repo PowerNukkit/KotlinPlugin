@@ -29,7 +29,7 @@ val ossrhPassword: String by project
 
 group = "org.powernukkit.plugins"
 val cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"))!!
-version = "$kotlinVersion+0.1.0+${cal[Calendar.YEAR]}.${cal[Calendar.MONTH]}.${cal[Calendar.DAY_OF_MONTH]}-SNAPSHOT"
+version = "$kotlinVersion+0.1.0+${cal[Calendar.YEAR]}.${cal[Calendar.MONTH]+1}.${cal[Calendar.DAY_OF_MONTH]}-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -70,6 +70,7 @@ dependencies {
     includedApi("io.ktor:ktor-http-cio:$ktorVersion")
     includedApi("io.ktor:ktor-client-core:$ktorVersion")
     includedApi("io.ktor:ktor-client-cio:$ktorVersion")
+    includedApi("io.ktor:ktor-client-auth:$ktorVersion")
     includedApi("io.ktor:ktor-client-json:$ktorVersion")
     includedApi("io.ktor:ktor-client-gson:$ktorVersion") {
         exclude("com.google.code.gson", "gson")

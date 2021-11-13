@@ -29,6 +29,7 @@ Can be used instead of [CreeperFace's KotlinLib](https://cloudburstmc.org/resour
 * [ktor-http-cio](https://ktor.io/docs/client.html)
 * [ktor-client-core](https://ktor.io/docs/client.html)
 * [ktor-client-cio](https://ktor.io/docs/client.html)
+* [ktor-client-auth](https://ktor.io/docs/auth.html)
 * [ktor-client-json](https://ktor.io/docs/json.html)
 * [ktor-client-gson](https://ktor.io/docs/json.html)
 * [ktor-client-serialization](https://ktor.io/docs/json.html)
