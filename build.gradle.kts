@@ -62,20 +62,20 @@ dependencies {
     }
     includedApi(kotlinx("datetime", kotlinxDateTimeVersion))
     includedApi(kotlinx("collections-immutable", kotlinxCollectionsImmutableVersion))
-    includedApi("io.ktor:ktor-io:$ktorVersion")
-    includedApi("io.ktor:ktor-utils:$ktorVersion")
-    includedApi("io.ktor:ktor-network:$ktorVersion")
-    includedApi("io.ktor:ktor-network-tls:$ktorVersion")
-    includedApi("io.ktor:ktor-http:$ktorVersion")
-    includedApi("io.ktor:ktor-http-cio:$ktorVersion")
-    includedApi("io.ktor:ktor-client-core:$ktorVersion")
-    includedApi("io.ktor:ktor-client-cio:$ktorVersion")
-    includedApi("io.ktor:ktor-client-auth:$ktorVersion")
-    includedApi("io.ktor:ktor-client-json:$ktorVersion")
-    includedApi("io.ktor:ktor-client-gson:$ktorVersion") {
+    includedApi(ktor("io"))
+    includedApi(ktor("utils"))
+    includedApi(ktor("network"))
+    includedApi(ktor("network-tls"))
+    includedApi(ktor("http"))
+    includedApi(ktor("http-cio"))
+    includedApi(ktor("client-core"))
+    includedApi(ktor("client-cio"))
+    includedApi(ktor("client-auth"))
+    includedApi(ktor("client-serialization"))
+    includedApi(ktor("client-json"))
+    includedApi(ktor("client-gson")) {
         exclude("com.google.code.gson", "gson")
     }
-    includedApi("io.ktor:ktor-client-serialization:$ktorVersion")
     includedApi("com.michael-bull.kotlin-inline-logger:kotlin-inline-logger:$inlineLoggerVersion")
 }
 
@@ -240,6 +240,7 @@ fun DependencyHandlerScope.includedImplementation(
 }
 
 fun kotlinx(name: String, version: String) = "org.jetbrains.kotlinx:kotlinx-$name:$version"
+fun ktor(name: String, version: String = ktorVersion) = "io.ktor:ktor-$name:$version"
 
 
 ///////////////////////////////////////////////////////////////////

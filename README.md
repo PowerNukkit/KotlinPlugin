@@ -62,7 +62,7 @@ repositories {
 
 dependencies {
     implementation("org.powernukkit:powernukkit:1.5.1.0-PN")
-    implementation("org.powernukkit.plugins:kotlin-plugin-lib:1.5.31+0.1.0+2021.10.5-SNAPSHOT")
+    implementation("org.powernukkit.plugins:kotlin-plugin-lib:1.5.31+0.1.0+2021.11.13-SNAPSHOT")
 }
 ```
 
