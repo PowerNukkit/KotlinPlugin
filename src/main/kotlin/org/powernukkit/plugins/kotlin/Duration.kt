@@ -2,6 +2,7 @@ package org.powernukkit.plugins.kotlin
 
 import kotlin.math.ceil
 import kotlin.time.*
+import kotlin.time.Duration.Companion.milliseconds
 
 @ExperimentalTime
 @ExperimentalPowerNukkitKotlinApi
@@ -9,18 +10,18 @@ public val Duration.inWholeTicks: Long get() = ceil(inWholeMilliseconds / 50.0).
 
 @ExperimentalTime
 @ExperimentalPowerNukkitKotlinApi
-public val Int.ticks: Duration get() = Duration.milliseconds(50L * this)
+public val Int.ticks: Duration get() = (50L * this).milliseconds
 
 @ExperimentalTime
 @ExperimentalPowerNukkitKotlinApi
-public val Long.ticks: Duration get() = Duration.milliseconds(50.0 * this)
+public val Long.ticks: Duration get() = (50.0 * this).milliseconds
 
 /**
  * @throws IllegalArgumentException if this `Double` value is `NaN`.
  */
 @ExperimentalTime
 @ExperimentalPowerNukkitKotlinApi
-public val Double.ticks: Duration get() = Duration.milliseconds(50.0 * this)
+public val Double.ticks: Duration get() = (50.0 * this).milliseconds
 
 /** Returns a [Duration] equal to this [Int] number of nanoseconds. */
 @ExperimentalTime

@@ -3,9 +3,9 @@ import java.util.Calendar
 import java.util.TimeZone
 
 plugins {
-    kotlin("jvm") version "1.5.31"
-    id("com.github.johnrengelman.shadow") version "7.1.0"
-    id("org.jetbrains.dokka") version "1.5.30"
+    kotlin("jvm") version "1.6.10"
+    id("com.github.johnrengelman.shadow") version "7.1.1"
+    id("org.jetbrains.dokka") version "1.6.0"
     `maven-publish`
     signing
 }
